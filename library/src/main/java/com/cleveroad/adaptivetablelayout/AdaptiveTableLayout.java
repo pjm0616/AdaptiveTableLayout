@@ -433,6 +433,14 @@ public class AdaptiveTableLayout extends ViewGroup implements ScrollHelper.Scrol
         }
     }
 
+    public int getTableScrollX() {
+        return mState.getScrollX();
+    }
+
+    public int getTableScrollY() {
+        return mState.getScrollY();
+    }
+
     /**
      * Refresh all view holders
      */
