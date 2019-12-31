@@ -872,8 +872,10 @@ public class AdaptiveTableLayout extends ViewGroup implements ScrollHelper.Scrol
         //search indexes for columns and rows which NEED TO BE showed in this area
         int leftColumn = mManager.getColumnByXWithShift(filledArea.left, mSettings.getCellMargin());
         int rightColumn = mManager.getColumnByXWithShift(filledArea.right, mSettings.getCellMargin());
+        rightColumn = Math.min(rightColumn, mManager.getColumnWidths().length - 1);
         int topRow = mManager.getRowByYWithShift(filledArea.top, mSettings.getCellMargin());
         int bottomRow = mManager.getRowByYWithShift(filledArea.bottom, mSettings.getCellMargin());
+        bottomRow = Math.min(bottomRow, mManager.getRowHeights().length - 1);
 
         for (int i = topRow; i <= bottomRow; i++) {
             for (int j = leftColumn; j <= rightColumn; j++) {
